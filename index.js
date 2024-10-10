@@ -2,7 +2,7 @@
 
 import inquirer from "inquirer"
 import fs from "fs"
-import generateMarkdown from "generateMarkdown.js"
+import generateMarkdown from "./generateMarkdown.js"
 
 // TODO: Create an array of questions for user input
 
@@ -53,79 +53,62 @@ const questions = [
         message: "License?",
         choices: [
             'Academic Free License v3.0',
-            'Apache license 2.0',
-            'Artistic license 2.0',
+            'Apache License 2.0',
+            'Artistic License 2.0',
             'Boost Software License 1.0',
-            'BSD 2-clause "Simplified" license',
-            'BSD 3-clause "New" or "Revised" license',
-            'BSD 3-clause Clear license',
-            'BSD 4-clause "Original" or "Old" license',
-            'BSD Zero-Clause license'
+            'BSD 2-clause "Simplified" License',
+            'BSD 3-clause "New" or "Revised" License',
+            'BSD 3-clause Clear License',
+            'BSD 4-clause "Original" or "Old" License',
+            'BSD Zero-Clause License',
+            'Creative Commons Zero v1.0 Universal',
+            'Creative Commons Attribution 4.0',
+            'Creative Commons Attribution Share Alike 4.0',
+            'Do What The F*ck You Want To Public License',
+            'Eclipse Public License 1.0',
+            'Eclipse Public License 2.0',
+            'European Union Public License 1.1',
+            'GNU Affero General Public License v3.0',
+            'GNU General Public License v2.0',
+            'GNU General Public License v3.0',
+            'GNU Lesser General Public License v2.1',
+            'GNU Lesser General Public License v3.0',
+            'ISC License',
+            'LaTeX Project Public License v1.3c',
+            'Microsoft Public License',
+            'MIT License',
+            'Mozilla Public License 2.0',
+            'Open Software License 3.0',
+            'PostgreSQL License',
+            'SIL Open Font License 1.1',
+            'The Unlicense',
+            'Universal Permissive License v1.0',
+            'zLib License'
         ]
-    },
+    }, {
+        type: "input",
+        name: "gitHub",
+        message: "Enter your GitHub username."
+    }, {
+        type: "input",
+        name: "email",
+        message: "Enter your email."
+    }
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err) => err ? console.error(err) : console.log('Success!'));
-}
+    fs.writeFile(fileName, data, (err) => err ? console.error(err) : console.log('Written to File'));
+};
 
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
         .then((answers) => {
-            const readMe = generateMarkdown(answers); /* Answers or Data? */
+            const readMe = generateMarkdown(answers);
             writeToFile('README.md', readMe)
         })
-}
+};
 
 // Function call to initialize app
 init();
-
-
-/*# <Your-Project-Title>
-
-## Description
-
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-
-## Installation
-
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
-
-## Usage
-
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
-
-## Credits
-
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
-
-## License
-
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
-*/
