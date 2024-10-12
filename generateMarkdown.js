@@ -33,17 +33,6 @@ const licenseBadge = {
   'zLib License': 'Zlib'
 };
 
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {
-  const badge = licenseBadge[license];
-  if (badge) {
-    return `[![License Badge](https://img.shields.io/badge/License-${badge}-blue.svg)](https://img.shields.io/badge/License-${badge}-blue.svg)`;
-  } else {
-    return '';
-  }
-}
-
 const licenseLink = {
   'Academic Free License v3.0': 'AFL-3.0',
   'Apache License 2.0': 'Apache-2.0',
@@ -79,8 +68,16 @@ const licenseLink = {
   'zLib License': 'Zlib'
 };
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+function renderLicenseBadge(license) {
+  const badge = licenseBadge[license];
+  const link = licenseLink[license];
+  if (badge && link) {
+    return `[![License Badge](https://img.shields.io/badge/License-${badge}-blue.svg)](https://opensource.org/licenses/${link})`;
+  } else {
+    return '';
+  }
+}
+
 function renderLicenseLink(license) {
   const link = licenseLink[license];
   if (link) {
@@ -90,8 +87,6 @@ function renderLicenseLink(license) {
   }
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license) {
     return `
@@ -99,14 +94,20 @@ This project is licensed under the ${license}.
 ${renderLicenseLink(license)}
     `;
   } else {
-    return ""
+    return '';
   }
 }
 
-// TODO: Create a function to generate markdown for README
+function formatCollaborators(collaborators) {
+  if (!collaborators || collaborators.length === 0) {
+    return '';
+  }
+
+  return collaborators.map(collab => `- [${collab.name}](${collab.gitHub})`).join('\n');
+}
+
 function generateMarkdown(data) {
-  return `
-# ${data.title}
+  return `# ${data.title}
 
 ${renderLicenseBadge(data.license)}
 
@@ -117,9 +118,10 @@ ${data.tableOfContents ? `
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
+- [Contributing](#contributing)
 - [License](#license)
-- [Questions?](#questions?)` : ''}
+- [Tests](#tests)
+- [Questions?](#questions)` : ''}
 
 ## Installation
 ${data.installation}
@@ -127,15 +129,18 @@ ${data.installation}
 ## Usage
 ${data.usage}
 
-## Credits
-${data.credits}
+## Contributing
+${formatCollaborators(data.collaborators) || 'No collaborators listed.'}
 
 ## License
 ${renderLicenseSection(data.license)}
 
+## Tests
+${data.tests}
+
 ## Questions?
-Find me on GitHub: [${data.gitHub}](https://github.com/EthanForrestCarr)  
-${data.email}
+Find me on GitHub: [${data.gitHub}](https://github.com/${data.gitHub})  
+For any additional questions, reach out via email: ${data.email}
 `;
 }
 
