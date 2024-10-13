@@ -173,7 +173,7 @@ function init() {
                     } else {
                         answers.collaborators = [];
                         const readMe = generateMarkdown(answers);
-                        writeToFile('README.md', readMe);
+                        writeToFile('DemoREADME.md', readMe);
                     }
                 });
         });
