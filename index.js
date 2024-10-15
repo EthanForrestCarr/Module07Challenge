@@ -168,7 +168,7 @@ function init() {
                             .then((collaborators) => {
                                 answers.collaborators = collaborators.length > 0 ? collaborators : [];
                                 const readMe = generateMarkdown(answers);
-                                writeToFile('README.md', readMe);
+                                writeToFile('dist/README.md', readMe);
                             });
                     } else {
                         answers.collaborators = [];
