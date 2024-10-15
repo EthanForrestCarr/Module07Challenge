@@ -3,7 +3,7 @@
 [![License Badge](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-I wanted to make my life easier when I create new repositories on GitHub. I built this project to ensure more consistency between my README files. This eliminates the issue of having to create a new README file from scratch every time I start a new project. While making this project, I learned how to write files to my applications from my terminal.
+The README Generator streamlines the process of creating consistent and detailed README files for your projects. Rather than manually writing a new README every time you start a project, this tool helps automate that process, saving time and ensuring uniformity across your repositories. While building this tool, I gained valuable experience in interacting with the file system through terminal commands.
 
 ## Table of Contents
 - [Installation](#installation)
@@ -14,23 +14,33 @@ I wanted to make my life easier when I create new repositories on GitHub. I buil
 - [Questions?](#questions)
 
 ## Installation
-In your terminal, run the command "npm i".
+To install the required dependencies, run the following command in your terminal:
+
+```bash
+npm install
+```
 
 ## Usage
-Run the command "node index.js" in your terminal once you've installed.
-[Demo Video](blob:chrome-extension://mmeijimgabbpbgpdklnllpncmdofkcpn/1ae97b84-70ba-4a73-a5f6-32e195b533ee)
+After installation, run the application using this command:
+
+```bash
+node index.js
+```
+
+Follow the prompts to generate your custom README file.
+
+[Demo Video](path_to_demo_video)
 
 ## Contributing
-Nobody yet.
+Contributions are welcome! Feel free to open issues or submit pull requests to improve this project.
 
 ## License
-
 This project is licensed under the MIT License.  
-[Learn more about MIT License here](https://opensource.org/licenses/MIT)
+For more details, visit the [MIT License page](https://opensource.org/licenses/MIT).
 
 ## Tests
-I will use this space to note tests I've been running on future projects.
+This section will include details of the tests I plan to implement in future iterations of this project.
 
 ## Questions?
 Find me on GitHub: [EthanForrestCarr](https://github.com/EthanForrestCarr)  
-For any additional questions, reach out via email: ethan@ethancarr.com
+For any additional questions: ethan@ethancarr.com
