@@ -1,9 +1,9 @@
-# This is a Test
+# this is a test
 
 [![License Badge](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-hello world HELLO WORLD HeLlO wOrLd oh jeez it's cool!
+hello world hello world hello world hello world hello world
 
 
 ## Table of Contents
@@ -15,14 +15,14 @@ hello world HELLO WORLD HeLlO wOrLd oh jeez it's cool!
 - [Questions?](#questions)
 
 ## Installation
-run npm i
+hello world
 
 ## Usage
-there will be examples here!
+hello world
 
 ## Contributing
-- [Chester](TheCheetoCheetah)
-- [me](myselfandI)
+- [me](andHelloWorld)
+- [you](andNotHelloWorld)
 
 ## License
 
@@ -31,7 +31,7 @@ This project is licensed under the MIT License.
     
 
 ## Tests
-Not right now, thanks
+hello world
 
 ## Questions?
 Find me on GitHub: [EthanForrestCarr](https://github.com/EthanForrestCarr)  

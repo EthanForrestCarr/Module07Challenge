@@ -29,7 +29,7 @@ node index.js
 
 Follow the prompts to generate your custom README file.
 
-[Demo Video](path_to_demo_video)
+[Demo Video](https://app.screencastify.com/v3/watch/Qefbo4dHIWfaPMJY0zSX)
 
 ## Contributing
 Contributions are welcome! Feel free to open issues or submit pull requests to improve this project.
